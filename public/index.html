@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>File Load Demo</title>
+    <link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="file-load.css" rel="stylesheet">
+    <script>
+        var global = global || window;
+    </script>
+</head>
+<body>
+    <img src="" alt="" id="img">
+    <a href="" id="lin">eed</a>
+<div class="container">
+    <div class="jumbotron">
+        <h1>File Load Demo</h1>
+        <p>This is an demo application that shows how files can be uploaded and downloaded to and from Oracle Database
+        using Node.js.</p>
+    </div>
+    <div id="browser-support-warning" class="alert alert-danger" style="display: none;" role="alert">
+        This browser does not have full support for the <a href="http://www.w3.org/TR/file-upload/">File API</a>. As a
+        result, this application may not work as designed. Please try a different browser.
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Upload Files</h3>
+        </div>
+        <div class="panel-body">
+            <p>Select the file(s) you would like to upload and then click the upload button.</p>
+            <div id="file-input-wrapper"></div>
+            <button id="file-upload" class="btn btn-primary pull-right" type="button" disabled>
+                <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+                Upload
+            </button>
+        </div>
+        <div class="table-responsive">
+            <table id="files-to-upload" class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Bytes</th>
+                    <th>Modified</th>
+                    <th>Progress</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Files in Database</h3>
+        </div>
+        <div class="panel-body">
+            <p>This is a listing of files that have already been uploaded to the database.</p>
+        </div>
+        <div class="table-responsive">
+            <table id="files-in-db" class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Bytes</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="/vendor/jquery/dist/jquery.min.js"></script>
+<script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/vendor/async/lib/async.js"></script>
+<script src="file-load.js"></script>
+</body>
+</html>
